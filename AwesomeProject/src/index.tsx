@@ -130,16 +130,16 @@ const characters = () => {
             </View>
             <View style={styles.buttonContainer}>
               <Button
-                onPress={() => Alert.alert('跳转到推荐页面')}
-                title="推荐"
+                onPress={() => Alert.alert('跳转到探索页面')}
+                title="探索更多"
                 color="#1727b6ff"
                 accessibilityLabel="RecommendPage"
               />
             </View>
             <View style={styles.buttonContainer}>
               <Button
-                onPress={() => Alert.alert('跳转到我的页面')}
-                title="我的"
+                onPress={() => Alert.alert('跳转到个人中心')}
+                title="个人中心"
                 color="#1cc52aff"
                 accessibilityLabel="MinePage"
               />
