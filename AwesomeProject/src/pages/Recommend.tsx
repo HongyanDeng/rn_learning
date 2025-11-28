@@ -1,5 +1,5 @@
 import { HeaderTitle } from "@react-navigation/elements";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import {
   Text, View, ScrollView,
   Button, StyleSheet, FlatList,
@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   HeaderTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    //color: 'white',
     textAlign: 'center',
     marginLeft: 10,
   },
@@ -27,13 +26,16 @@ const styles = StyleSheet.create({
     width: '18%',
   },
   CardContainer: {
-    
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
   SingleContainer: {
+    width: '48%',
     marginTop: 10,
     marginBottom: 10,
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: '1%',
+    marginRight: '1%',
     backgroundColor: '#39b840ff',
     borderRadius: 15,
     borderColor: '#e65f5fff',
@@ -45,10 +47,9 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     backgroundColor: '#c322c9ff',
-
   },
   item: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     padding: 10,
     marginTop: 0,
     borderBottomWidth: 1,
@@ -57,16 +58,15 @@ const styles = StyleSheet.create({
   itemTitle: {
     textAlign: 'left',
     marginRight: 'auto',
-    fontSize: 13,
+    fontSize: 10,
     fontWeight: 'bold',
-    //文字修改成宋体
     fontFamily: 'songti',
     color: '#272626ff'
   },
   itemKey: {
     textAlign: 'right',
     marginLeft: 'auto',
-    fontSize: 12,
+    fontSize: 10,
     color: '#272626ff'
   },
   bottomContainer: {
@@ -84,15 +84,14 @@ const styles = StyleSheet.create({
   },
 });
 
-
 const recommend = () => {
   const renderItem = ({ item }: { item: { title: string, key: string } }) => (
     <View style={styles.item}>
-
       <Text style={styles.itemTitle}>{item.title}</Text>
       <Text style={styles.itemKey}>{item.key}</Text>
     </View>
   );
+
   return (
     <ScrollView>
       <Text style={styles.HeaderTitle}>名侦探柯南档案馆</Text>
@@ -117,7 +116,7 @@ const recommend = () => {
           <Text style={styles.SecondTitle}>电视动画</Text>
           <FlatList
             data={[
-              { title: '2026年01月03日', key: '工藤新一水族馆事件【1小时特别篇】' },
+              { title: '2026年01月03日', key: 'u工藤新一水族馆事件【1小时特别篇】' },
               { title: '11月29日 动画原创', key: 'TV1183(1241) The·审讯室3' },
               { title: '11月22日 原创重映', key: 'RTV918 迷你巡逻车女警大追踪' },
               { title: '11月15日 动画原创', key: 'TV1182(1240) 逮住那张脸' },
@@ -177,16 +176,13 @@ const recommend = () => {
           <FlatList
             data={[
               { title: '2025年4月18日', key: '原作漫画第107卷(钥匙孔角色为鬼冢八藏)发行' },
-
             ]}
             renderItem={renderItem}
             scrollEnabled={false}
             style={styles.FlatListContent}
           />
         </View>
-
       </View>
-
 
       <Text>底部导航</Text>
       <View style={styles.bottomContainer}>
